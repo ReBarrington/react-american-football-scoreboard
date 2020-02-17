@@ -52,8 +52,8 @@ const [value, setValue] = useState(); // Give these better names, and decide whe
 
 ### STEP 3 - Render the Scores to the DOM
 
-- [ ] The scores in the JSX are currently hardcoded to 32 points each. Remove the hardcoded values
-- [ ] Render the state values from what we just set up in steps 1 and 2
+- [X] The scores in the JSX are currently hardcoded to 32 points each. Remove the hardcoded values
+- [X] Render the state values from what we just set up in steps 1 and 2
 - [ ] Play around with different initial values to test if they are rendering on the DOM correctly
 
 ### STEP 4 - Add Click Functionality to Increment the Scores
