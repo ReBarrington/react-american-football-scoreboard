@@ -2,12 +2,14 @@
 import React, {useState} from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
+import ReactDOM from "react-dom";
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-  const initialScore = 0;
-  const [homeScore, homeCount] = useState(number);
-  const [tigerScore, tigerCount] = useState(number);
+  const homeInitial = 0;
+  const awayInitial = 0;
+  const [homeScore, homeCount] = useState(homeInitial);
+  const [tigerScore, tigerCount] = useState(awayInitial);
 
 
 
@@ -20,12 +22,12 @@ function App() {
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
-            <div className="home__score">`${homeCount}`</div>
+            <div className="home__score">{homeScore}</div>
           </div>
           <div className="timer">00:03</div>
           <div className="away">
             <h2 className="away__name">Tigers</h2>
-            <div className="away__score">`${tigerCount}`</div>
+            <div className="away__score">{tigerScore}</div>
           </div>
         </div>
         <BottomRow />
@@ -34,11 +36,11 @@ function App() {
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button onClick={() => homeCount(homeScore +3)} className="homeButtons__touchdown">Home Touchdown</button>
-          <button className="homeButtons__fieldGoal">Home Field Goal</button>
+          <button onClick={() => homeCount(homeScore +7)} className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown">Away Touchdown</button>
-          <button className="awayButtons__fieldGoal">Away Field Goal</button>
+          <button onClick={() => tigerCount(tigerScore +3)} className="awayButtons__touchdown">Away Touchdown</button>
+          <button onClick={() => tigerCount(tigerScore +7)} className="awayButtons__fieldGoal">Away Field Goal</button>
         </div>
       </section>
     </div>
